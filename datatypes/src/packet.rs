@@ -1,9 +1,9 @@
 //! Raw packet-level datatypes.
 
 use super::FromMbuf;
-use iris_core::{conntrack::pdu::L4Context, Mbuf};
 #[allow(unused_imports)]
 use iris_compiler::{datatype, datatype_group};
+use iris_core::{conntrack::pdu::L4Context, Mbuf};
 
 /// Subscribable alias for [`iris_core::Mbuf`]
 #[cfg_attr(not(feature = "skip_expand"), datatype("Packet"))]

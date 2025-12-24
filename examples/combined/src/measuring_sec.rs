@@ -7,9 +7,9 @@ use std::net::IpAddr;
 use std::sync::OnceLock;
 use std::time::SystemTime;
 
+use iris_compiler::callback;
 use iris_core::FiveTuple;
 use iris_core::protocols::{packet::tcp::TCP_PROTOCOL, stream::SessionProto};
-use iris_compiler::callback;
 
 lazy_static::lazy_static! {
     static ref IPS: std::sync::Mutex<std::collections::HashSet<String>> =
@@ -105,9 +105,9 @@ pub fn write_stats() -> std::io::Result<()> {
     Ok(())
 }
 
+use iris_compiler::filter;
 use iris_core::protocols::stream::{Session, SessionData};
 use iris_core::subscription::FilterResult;
-use iris_compiler::filter;
 
 // TODO apply this per packet
 #[filter("level=L4FirstPacket")]

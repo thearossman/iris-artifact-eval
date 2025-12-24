@@ -4,10 +4,10 @@
 //! See datatypes, including foreign types, that implement [StaticData](trait.StaticData.html).
 
 use super::StaticData;
-use iris_core::conntrack::conn_id::FiveTuple;
-use iris_core::conntrack::pdu::L4Pdu;
 #[allow(unused_imports)]
 use iris_compiler::datatype;
+use iris_core::conntrack::conn_id::FiveTuple;
+use iris_core::conntrack::pdu::L4Pdu;
 use pnet::datalink::MacAddr;
 
 /// Subscribable alias for [`iris_core::FiveTuple`]

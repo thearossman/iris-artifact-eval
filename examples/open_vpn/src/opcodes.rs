@@ -1,5 +1,5 @@
-use iris_core::L4Pdu;
 use iris_compiler::*;
+use iris_core::L4Pdu;
 use std::collections::HashSet;
 
 use crate::utils::{N_OPCODES, WINDOW_SIZE_ANALYSIS, openvpn_hdrlen};

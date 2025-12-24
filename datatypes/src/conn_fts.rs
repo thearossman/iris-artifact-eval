@@ -1,10 +1,10 @@
 //! Various individual connection-level subscribable types for TCP and/or UDP
 //! connection information, statistics, and state history.
 
-use iris_core::L4Pdu;
-use iris_core::{subscription::Tracked, StateTxData};
 #[allow(unused_imports)]
 use iris_compiler::{datatype, datatype_group};
+use iris_core::L4Pdu;
+use iris_core::{subscription::Tracked, StateTxData};
 use serde::ser::{Serialize, SerializeSeq, SerializeStruct, Serializer};
 use std::time::{Duration, Instant};
 

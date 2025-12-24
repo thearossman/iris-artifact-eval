@@ -1,14 +1,14 @@
 //! A sample connection record that provides various TCP and/or UDP connection
 //! information, statistics, and state history. It does not deliver payload data.
 
+#[allow(unused_imports)]
+use iris_compiler::{datatype, datatype_group};
 use iris_core::conntrack::conn::tcp_conn::reassembly::wrapping_lt;
 use iris_core::conntrack::conn_id::FiveTuple;
 use iris_core::conntrack::pdu::L4Pdu;
 use iris_core::protocols::packet::tcp::{ACK, FIN, RST, SYN};
 use iris_core::subscription::Tracked;
 use iris_core::StateTxData;
-#[allow(unused_imports)]
-use iris_compiler::{datatype, datatype_group};
 
 use serde::ser::{SerializeStruct, Serializer};
 use serde::Serialize;

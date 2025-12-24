@@ -82,8 +82,8 @@ pub fn dump_keys() {
         if let Ok(m) = std::fs::metadata(file) {
             if m.is_file() && m.len() == 0 {
                 match std::fs::remove_file(file) {
-                    Ok(_) => {},
-                    Err(e) => println!("Failed to delete {}: {}", file.display(), e)
+                    Ok(_) => {}
+                    Err(e) => println!("Failed to delete {}: {}", file.display(), e),
                 }
             }
         }

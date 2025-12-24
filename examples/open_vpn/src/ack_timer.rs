@@ -1,5 +1,5 @@
-use iris_core::L4Pdu;
 use iris_compiler::*;
+use iris_core::L4Pdu;
 
 use crate::utils::{WINDOW_SIZE_ACK, WINDOW_SIZE_ANALYSIS, openvpn_hdrlen};
 

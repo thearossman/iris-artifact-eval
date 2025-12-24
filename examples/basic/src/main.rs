@@ -1,9 +1,9 @@
 use clap::Parser;
+use iris_compiler::*;
 use iris_core::subscription::{FilterResult, StreamingCallback, StreamingFilter};
 use iris_core::StateTxData;
 use iris_core::{config::load_config, L4Pdu, Runtime};
 use iris_datatypes::{ConnRecord, TlsHandshake};
-use iris_compiler::*;
 use std::path::PathBuf;
 
 #[derive(Parser, Debug)]

@@ -1,5 +1,5 @@
-use iris_core::L4Pdu;
 use iris_compiler::*;
+use iris_core::L4Pdu;
 
 /// See section 6.2
 const ACK_BIN_SIZE: usize = 10;

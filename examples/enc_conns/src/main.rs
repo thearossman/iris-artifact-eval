@@ -1,10 +1,10 @@
 use clap::Parser;
+use iris_compiler::{callback, datatype, datatype_group, input_files, iris_main};
 use iris_core::protocols::packet::tcp::TCP_PROTOCOL;
 use iris_core::protocols::stream::SessionProto;
 use iris_core::subscription::Tracked;
 use iris_core::StateTxData;
 use iris_core::{config::load_config, L4Pdu, Runtime};
-use iris_compiler::{callback, datatype, datatype_group, input_files, iris_main};
 use std::path::PathBuf;
 use std::sync::atomic::AtomicUsize;
 

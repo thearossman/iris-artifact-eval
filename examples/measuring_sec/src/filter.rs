@@ -1,7 +1,7 @@
+use iris_compiler::filter;
 use iris_core::FiveTuple;
 use iris_core::protocols::stream::{Session, SessionData};
 use iris_core::subscription::FilterResult;
-use iris_compiler::filter;
 use lazy_static::lazy_static;
 
 // TODO apply this per packet

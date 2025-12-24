@@ -7,9 +7,9 @@ use std::net::IpAddr;
 use std::sync::OnceLock;
 use std::time::SystemTime;
 
+use iris_compiler::callback;
 use iris_core::FiveTuple;
 use iris_core::protocols::{packet::tcp::TCP_PROTOCOL, stream::SessionProto};
-use iris_compiler::callback;
 use lazy_static::lazy_static;
 
 lazy_static! {
