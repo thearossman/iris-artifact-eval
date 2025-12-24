@@ -25,8 +25,8 @@ An Iris application consists of *one or more* traffic *subscriptions*, each of w
 
 * **User-Defined Filters, Data Types, and Callbacks.** Iris provides complete programmable control over filter predicates, data transformation and construction, and callback (analysis) code.
 
-* **Connection Scope.** Iris scopes subscriptions to inferred connections, i.e., bidirectional packet streams associated with the same five-tuple until a FIN/ACK sequence, RST, or user-configurable inactivity timeout. Connections may not fully establish (i.e., an unanswered SYN is treated as a ``connection'' by \system).
-Applications that analyze data across connections can be built on top of \system, much like Iris is built on top of DPDK.
+* **Connection Scope.** Iris scopes subscriptions to inferred connections, i.e., bidirectional packet streams associated with the same five-tuple until a FIN/ACK sequence, RST, or user-configurable inactivity timeout. Connections may not fully establish (i.e., an unanswered SYN is treated as a ``connection'' by Iris).
+Applications that analyze data across connections can be built on top of Iris, much like Iris is built on top of DPDK.
 
 * **State Machines.** To expose both common abstractions and low-level access to connection data, Iris presents connections to user code as a set of protocol-specific state machines that user-defined functions can hook into.
 Iris currently supports the states and state transitions described in [DataLevel](core/src/conntrack/conn/conn_state.rs#L29).
@@ -89,9 +89,12 @@ impl OpenVPNOpcode {
 }
 ```
 
+Note: in some cases, Iris can infer the [DataLevel](core/src/conntrack/conn/conn_state.rs#L29) (e.g., a "tls" callback requesting a TLS handshake is delivered as soon as the TLS handshake is ready).
+The compiler will throw an error if a DataLevel is required and missing.
+
 ### Filters
 
-Iris supports the Wireshark-like filter syntax introduced by [Retina](https://stanford-esrg.github.io/retina/retina_filtergen/index.html) for filtering on protocols and protocol fields.
+Iris supports a Wireshark-like filter syntax that builds on that introduced by [Retina](https://stanford-esrg.github.io/retina/retina_filtergen/index.html) for filtering on protocols and protocol fields.
 
 Iris also supports defining custom (stateful or stateless) filters, similar to data types. Custom filter functions must return a `FilterResult` (Accept, Drop, or Continue). Stateful filters (i.e., those associated with a struct) must implement the [StatefulFilter](./core/src/subscription/filter.rs) trait.
 
